@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d1b2a; /* Dark blue background */
+  color: #ffffff; /* White text */
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pad-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.pad {
+  background-color: #1b2631; /* Darker blue for pads */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; /* Make pad clickable */
+  position: relative; /* Position for the play button */
+}
+
+.pad input[type="range"] {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 100%;
+  height: 8px; /* Height of the slider */
+  background: #2a2d34; /* Background color */
+  border-radius: 5px; /* Rounded edges */
+  outline: none; /* Remove outline */
+}
+
+.pad input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none; /* Remove default styling */
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  border-radius: 50%; /* Round thumb */
+  background: #007BFF; /* Blue color for the thumb */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.pad input[type="range"]::-moz-range-thumb {
+  width: 20px; /* Width of the thumb */
+  height: 20px; /* Height of the thumb */
+  border-radius: 50%; /* Round thumb */
+  background: #007BFF; /* Blue color for the thumb */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.pad:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.pad input[type="text"],
+.pad input[type="file"],
+.pad input[type="range"],
+.pad .toggle {
+  width: calc(100% - 20px); /* Adjust width to fit */
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2d34; /* Input background */
+  color: #ffffff; /* Input text color */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+}
+
+.pad .toggle {
+  display: flex;
+  align-items: center;
+}
+
+.toggle input {
+  margin-right: 10px;
+}
+
+#add-pad,
+#record-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF; /* Blue */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#add-pad:hover,
+#record-button:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+.recording {
+  background-color: #dc3545; /* Red for stop */
+}
+
+/* Styles for the Play button */
+.play-button {
+  position: absolute;
+  top: 18px;
+  right: 0px;
+  width: 10px;
+  height: 200px;
+  background-color: rgb(70, 94, 202); /* Green */
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15%;
+  font-size: 9px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button:hover {
+  background-color: #795cf7; /* Darker green */
+}
+
+.play-button:focus {
+  outline: none;
+}
